@@ -2,5 +2,5 @@ name: CakeCore
 main: CakeCore\Main
 version: "4.0"
 api: [1.12.0]
-description: Main CakeCraft Plguin!
+description: Main CakeCraft Plugin!
 author: Cake_Slayer
