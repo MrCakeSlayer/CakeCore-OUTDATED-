@@ -1,0 +1,23 @@
+---
+joinmessages:
+ - "&c=========================="
+ - "&dWelcome To Cake Craft!"
+ - "&dMore Information Soon!"
+ - "&c=========================="
+prefix: "CakeCraft"
+suffix: ""
+time: 60
+datetime-format: "H:i:s"
+broadcast-enabled: true
+messages:
+ - "&c{PREFIX}&7>>&f Welcome To Cake Craft!"
+ - "&c{PREFIX}&7>>&f New Message!"
+ - "&c{PREFIX}&7>>&f Another Message!"
+popup-time: 15
+popup-duration: 5
+popup-broadcast-enabled: true
+popups:
+ - "&aWelcome to Cake Craft!"
+ - "&a{TOTALPLAYERS} &7of &a{MAXPLAYERS} &7online"
+ - "&7Another Cool Pop Up!"
+...
