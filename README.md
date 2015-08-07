@@ -1,6 +1,6 @@
 # CakeCore
 Official Core Plugin For Cake Craft Servers!
 
-More Information Soon
+More Information In Changelog.txt
 
-*NO PUBLIC RELEASE PLANNED*
+*NOW PUBLICLY RELEASED*
