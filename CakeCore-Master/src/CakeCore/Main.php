@@ -11,6 +11,7 @@
 namespace CakeCore;
 //General
 use pocketmine\scheduler\PluginTask;
+use pocketmine\command\CommandSender;
 use pocketmine\Server;
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
@@ -23,8 +24,10 @@ use pocketmine\event\EventPriority;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerKickEvent;
-//Future Use
+//Future Use, Death Kick
 use pocketmine\event\player\PlayerDeathEvent;
+//Future Use, SocialSpy
+use pocketmine\event\player\PlayerCommandPreprocessEvent;
 
 class Main extends PluginBase implements Listener{
     /*
@@ -81,7 +84,7 @@ class Main extends PluginBase implements Listener{
     */
     public function onJoin(PlayerJoinEvent $event){
         $player = $event->getPlayer();
-        var_dump($this->getConfig()->get("messages"));
+        var_dump($this->getConfig()->get("joinmessages"));
     }
     /*
     Anti-Kick/Ban OP
@@ -114,8 +117,17 @@ class Main extends PluginBase implements Listener{
 		return $message;
 	}
     /*
-    TODO: SocialSpy (Also logs to socialspy.log)
+    TODO: SocialSpy
     */
+    public function onTell(PlayerCommandPreProcessEvent $event){
+        $command = explode(" ", strtolower($event->getMessage()));
+        if($command[0] === "/tell"){
+        if($p->isOnline() && $p->isOp()){
+        $p->sendMessage(TextFormat::DARK_RED."[SS] ".TextFormat::WHITE.$sender->getName()."->".TextFormat::WHITE.$receive->getName($args).TextFormat::WHITE.$this->getMsg($args));
+        return true;
+        }
+    }
+    }
     /*
     ADDITION: Command Logger For SocialSpy? (Logs to commands.log)
     */
